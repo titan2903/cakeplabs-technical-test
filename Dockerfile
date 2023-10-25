@@ -14,7 +14,6 @@ RUN apk add --no-cache bash make gcc libc-dev
 # Cache and install dependencies
 COPY go.mod ./
 COPY go.sum ./
-RUN go mod download
 # Copy app files
 COPY . .
 RUN cp -rf ./.env.example ./.env
