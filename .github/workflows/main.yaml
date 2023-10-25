@@ -8,10 +8,15 @@ jobs:
   build-push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: list of files
         run: ls -la
+      
+      - name: Setup golang
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1/20'
 
       - name: Check go version
         run: go version
@@ -25,7 +30,7 @@ jobs:
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
-          push: true
+          push: false
           tags: titan29/cakeplabs-technical-test:${{ github.run_number }}
 
       - name: Check docker images
