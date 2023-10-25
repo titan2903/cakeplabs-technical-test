@@ -1,29 +1,43 @@
 # STEP 1: build executable binary
 
-# Pull golang image
+# Use the official Golang image as the build stage
 FROM golang:1.18-alpine AS build
 
-# Additional Label
-LABEL maintainer="Titanio Yudista<titanioyudista98@gmail.com>"
+# Set a label for the maintainer
+LABEL maintainer="Titanio Yudista <titanioyudista98@gmail.com>"
 
-# Add a work directoryer
+# Set the working directory in the build stage
 WORKDIR /app
-# Install make
+
+# Install required dependencies for building the Go application
 RUN apk add --no-cache bash make gcc libc-dev
 
-# Cache and install dependencies
-COPY go.mod ./
-COPY go.sum ./
-# Copy app files
-COPY . .
-RUN cp -rf ./.env.example ./.env
-# Build app
-RUN go build -o cakeplabs-technical-test
+# Copy Go module files and build cache for better Docker layer caching
+COPY go.mod go.sum ./
+RUN go mod download
 
-# step 2: build a small image
+# Copy the source code and any additional files
+COPY . .
+
+# Copy the environment file (you should provide this file)
+RUN cp .env.example .env
+
+# Build the Go application
+RUN go build -o cakeplabs-exam
+
+# STEP 2: create a smaller image for the final application
+
+# Use a minimal Alpine Linux image as the final stage
 FROM alpine:3.16.0
-RUN apk add bash build-base gcompat
-COPY --from=build /app/cakeplabs-technical-test .
-# Expose port
+
+# Install necessary packages for the final image
+RUN apk add --no-cache bash
+
+# Copy the compiled binary from the build stage
+COPY --from=build /app/cakeplabs-exam /
+
+# Expose port if your application listens on a specific port
 EXPOSE 8000
-CMD ["/cakeplabs-technical-test"]
+
+# Define the command to run your application
+CMD ["/cakeplabs-exam"]
