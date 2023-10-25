@@ -25,6 +25,9 @@ RUN cp .env.example .env
 # Build the Go application
 RUN go build -o cakeplabs-exam
 
+# Create a vendor directory and copy dependencies
+RUN go mod vendor
+
 # STEP 2: create a smaller image for the final application
 
 # Use a minimal Alpine Linux image as the final stage
@@ -33,8 +36,9 @@ FROM alpine:3.16.0
 # Install necessary packages for the final image
 RUN apk add --no-cache bash
 
-# Copy the compiled binary from the build stage
+# Copy the compiled binary and vendor directory from the build stage
 COPY --from=build /app/cakeplabs-exam /
+COPY --from=build /app/vendor /vendor
 
 # Expose port if your application listens on a specific port
 EXPOSE 8000
