@@ -13,8 +13,8 @@ WORKDIR /app
 RUN apk add --no-cache bash make gcc libc-dev
 
 # Copy Go module files and build cache for better Docker layer caching
-COPY go.mod go.sum ./
-RUN go mod download
+# COPY go.mod go.sum ./
+# RUN go mod download
 
 # Copy the source code and any additional files
 COPY . .
@@ -26,7 +26,7 @@ RUN cp .env.example .env
 RUN go build -o cakeplabs-exam
 
 # Create a vendor directory and copy dependencies
-RUN go mod vendor
+# RUN go mod vendor
 
 # STEP 2: create a smaller image for the final application
 
@@ -37,8 +37,8 @@ FROM alpine:3.16.0
 RUN apk add --no-cache bash
 
 # Copy the compiled binary and vendor directory from the build stage
-COPY --from=build /app/cakeplabs-exam /
-COPY --from=build /app/vendor /vendor
+# COPY --from=build /app/cakeplabs-exam /
+# COPY --from=build /app/vendor /vendor
 
 # Expose port if your application listens on a specific port
 EXPOSE 8000
