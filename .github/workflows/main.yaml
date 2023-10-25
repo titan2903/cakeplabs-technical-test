@@ -25,7 +25,7 @@ jobs:
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
-          push: false
+          push: true
           tags: titan29/cakeplabs-technical-test:${{ github.run_number }}
 
       - name: Check docker images
