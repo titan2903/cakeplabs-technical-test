@@ -52,7 +52,7 @@
 
 ## Postman API Sample
 
-- Can view the Postman documentation in the file `postman_collection.json` within this repository or in this [link postman collection](https://ik.imagekit.io/ckb21lc9cd/postman_collection_18WzZQ4tF.json?updatedAt=1698279382114)
+- Can view the Postman documentation in the file `postman_collection.json` within this repository or in this [link postman collection](https://ik.imagekit.io/ckb21lc9cd/postman_collection_hunkbbdt3.json?updatedAt=1698280661423)
 
 ## Dockerhub Pull Image
 
