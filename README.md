@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Go 1.18](https://golang.org/dl/)
+- [Go 1.21.3](https://golang.org/dl/)
 - [GORM](https://gorm.io/index.html)
 - [Echo Framework](https://echo.labstack.com/)
 
