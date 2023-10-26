@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"menu_id\": 1,\n  \"topping_name\": \"Cheese1\",\n  \"filling_name\": \"\"\n}\n",
+							"raw": "{\n  \"menu_id\": 1,\n  \"topping_name\": \"Milk Cream\",\n  \"filling_name\": \"Sugar Glaze\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -447,7 +447,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "3"
 								}
 							]
 						}
@@ -522,7 +522,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"menu_id\": 1,\n  \"topping_name\": \"Cheese\"\n//   \"filling_name\": \"Chicken\"\n}\n",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
