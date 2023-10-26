@@ -54,13 +54,13 @@
 
 - Can view the Postman documentation in the file `postman_collection.json` within this repository or in this [link postman collection](https://ik.imagekit.io/ckb21lc9cd/postman_collection_hunkbbdt3.json?updatedAt=1698280661423)
 
-## Dockerhub Pull Image
+## Docker Image
 
-- [Dockerhub pull image](https://hub.docker.com/r/titan29/cakeplabs-technical-test)
+- [DockerHub pull image](https://hub.docker.com/r/titan29/cakeplabs-technical-test)
 
-## Relational Database
+## Database Design
 
-- [Database design](https://dbdiagram.io/d/cakeplabs-tehcnical-test-65386b2affbf5169f062112e)
+- [Relational Database design](https://dbdiagram.io/d/cakeplabs-tehcnical-test-65386b2affbf5169f062112e)
 
 ## Github Action
 
