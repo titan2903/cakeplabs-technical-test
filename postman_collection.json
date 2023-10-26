@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "d619d132-c0c1-4b42-9518-2a3a61566a8f",
+		"name": "Cakeplabs Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12510739"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"menu_id\": 1,\n  \"topping_name\": \"Cheese1\",\n  \"filling_name\": \"\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"menu_id\": 3,\n  \"topping_name\": \"Tomato\",\n  \"filling_name\": \"Chicken\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"message\": \"Order created\",\n        \"code\": 201,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/orders/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Order By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/orders/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"menu_name\": \"Pie\",\n        \"topping_name\": \"Tomato\",\n        \"filling_name\": \"Chicken\",\n        \"total_price\": 72000,\n        \"created_at\": \"2023-10-25T20:22:06.607915+07:00\",\n        \"updated_at\": \"2023-10-25T20:22:06.607915+07:00\"\n    },\n    \"meta\": {\n        \"message\": \"Order found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"menu_name\": \"Pizza\",\n            \"topping_name\": \"\",\n            \"filling_name\": \"Tuna\",\n            \"total_price\": 70000,\n            \"created_at\": \"2023-10-25T19:32:12.557298+07:00\",\n            \"updated_at\": \"2023-10-25T19:32:12.557298+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"menu_name\": \"Pie\",\n            \"topping_name\": \"Tomato\",\n            \"filling_name\": \"Chicken\",\n            \"total_price\": 72000,\n            \"created_at\": \"2023-10-25T20:22:06.607915+07:00\",\n            \"updated_at\": \"2023-10-25T20:22:06.607915+07:00\"\n        }\n    ],\n    \"meta\": {\n        \"message\": \"Orders found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Get All Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/menus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"menus"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Menu",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/menus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"menus"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Pizza\",\n            \"price\": 50000,\n            \"created_at\": \"2023-10-25T19:30:56.323321+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.323321+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Doughnut\",\n            \"price\": 20000,\n            \"created_at\": \"2023-10-25T19:30:56.323321+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.323321+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Pie\",\n            \"price\": 45000,\n            \"created_at\": \"2023-10-25T19:30:56.323321+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.323321+07:00\"\n        }\n    ],\n    \"meta\": {\n        \"message\": \"Menus found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Menu By Keywords",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/menus?keywords=Pizza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"menus"
+							],
+							"query": [
+								{
+									"key": "keywords",
+									"value": "Pizza"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Menu By Keywords",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/menus?keywords=Pizza",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"menus"
+									],
+									"query": [
+										{
+											"key": "keywords",
+											"value": "Pizza"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Pizza\",\n            \"price\": 50000,\n            \"created_at\": \"2023-10-25T19:30:56.323321+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.323321+07:00\"\n        }\n    ],\n    \"meta\": {\n        \"message\": \"Menus found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Menu By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/menus/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"menus",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Menu By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/menus/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"menus",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Pizza\",\n        \"price\": 50000,\n        \"created_at\": \"2023-10-25T19:30:56.323321+07:00\",\n        \"updated_at\": \"2023-10-25T19:30:56.323321+07:00\"\n    },\n    \"meta\": {\n        \"message\": \"Menu found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Addition",
+			"item": [
+				{
+					"name": "Get All Addition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/additions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"additions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Addition",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/additions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"additions"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Cheese\",\n            \"price\": 12000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Chicken\",\n            \"price\": 18000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Pepper\",\n            \"price\": 8000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Tomato\",\n            \"price\": 9000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Tuna\",\n            \"price\": 20000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Blueberry\",\n            \"price\": 12000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Sugar Glaze\",\n            \"price\": 10000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Apple Slices\",\n            \"price\": 14000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Milk Cream\",\n            \"price\": 10000,\n            \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n            \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n        }\n    ],\n    \"meta\": {\n        \"message\": \"Additions found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Addition By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/additions/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"additions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Addition By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/additions/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"additions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Chicken\",\n        \"price\": 18000,\n        \"created_at\": \"2023-10-25T19:30:56.324934+07:00\",\n        \"updated_at\": \"2023-10-25T19:30:56.324934+07:00\"\n    },\n    \"meta\": {\n        \"message\": \"Addition found\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Seeder Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/seeder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"seeder"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Seeder Data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"menu_id\": 1,\n  \"topping_name\": \"Cheese\"\n//   \"filling_name\": \"Chicken\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/seeder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"seeder"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"message\": \"Success seed data menus, toppings and fillings\",\n        \"code\": 200,\n        \"status\": \"Success\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
