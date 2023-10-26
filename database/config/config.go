@@ -46,14 +46,12 @@ var (
 func GetQuery() *gorm.DB {
 
 	oneSync.Do(func() {
-		// ! Connect to PostgreSQL database
+		//! Connect to PostgreSQL database
 		dsnMaster := utils.GoDotEnvVariable("DATABASE_URL")
 		dbMaster, errMaster := gorm.Open(postgres.Open(dsnMaster), &gorm.Config{})
 		if errMaster != nil {
 			log.Panic(errMaster)
 		}
-
-		//! ----------------------------------------------------------------------------------------------
 
 		if errMaster = dbMaster.AutoMigrate(
 			&entity.Menu{},

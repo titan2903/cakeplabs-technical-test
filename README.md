@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Go 1.21.3](https://golang.org/dl/)
+- [Go Version go1.21.3](https://golang.org/dl/)
 - [GORM](https://gorm.io/index.html)
 - [Echo Framework](https://echo.labstack.com/)
 
@@ -32,7 +32,7 @@
    cp .env.example .env
    ```
 
-5. Configure environment variables to match your local database
+5. Configure environment variables within the `.env` file to match your local database
 
 6. Run this repository locally
 
@@ -60,7 +60,7 @@
 
 ## Relational Database
 
-- [Database modeling](https://dbdiagram.io/d/cakeplabs-tehcnical-test-65386b2affbf5169f062112e)
+- [Database design](https://dbdiagram.io/d/cakeplabs-tehcnical-test-65386b2affbf5169f062112e)
 
 ## Github Action
 

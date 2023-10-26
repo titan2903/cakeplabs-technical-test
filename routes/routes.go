@@ -22,7 +22,6 @@ func NewRoutes() *echo.Echo {
 
 	e.Validator = m.NewCustomValidator()
 
-	//! Main Routes
 	e.GET("/v1/healthcheck", handler.HealthCheck)
 
 	e.GET("/v1/menus/:id", handler.GetMenuById)
