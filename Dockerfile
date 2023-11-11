@@ -14,7 +14,6 @@ COPY . .
 
 # Copy the environment file (you should provide this file)
 # RUN cp .env.example .env
-COPY .env.example /app/.env
 
 # Build the Go application
 RUN go build -o cakeplabs-technical-test
