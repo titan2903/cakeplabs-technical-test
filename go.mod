@@ -1,6 +1,6 @@
 module cakeplabs-technical-test
 
-go 1.21.3
+go 1.20
 
 require (
 	github.com/go-playground/validator v9.31.0+incompatible

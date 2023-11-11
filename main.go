@@ -10,7 +10,7 @@ func main() {
 	e := routes.NewRoutes()
 	port := utils.GoDotEnvVariable("PORT")
 	if port == "" {
-		port = "8080"
+		port = "8090"
 	}
 
 	sPort := fmt.Sprintf(":%s", port)
