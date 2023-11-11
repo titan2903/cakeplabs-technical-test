@@ -9,14 +9,12 @@ LABEL maintainer="Titanio Yudista <titanioyudista98@gmail.com>"
 # Set the working directory in the build stage
 WORKDIR /app
 
-# # Install required dependencies for building the Go application
-# RUN apk add --no-cache bash make gcc libc-dev
-
 # Copy the source code and any additional files
 COPY . .
 
 # Copy the environment file (you should provide this file)
-RUN cp .env.example .env
+# RUN cp .env.example .env
+COPY .env.example /app/.env
 
 # Build the Go application
 RUN go build -o cakeplabs-technical-test
