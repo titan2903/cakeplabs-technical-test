@@ -8,7 +8,7 @@ import (
 	"log"
 	"sync"
 
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
@@ -48,7 +48,7 @@ func GetQuery() *gorm.DB {
 	oneSync.Do(func() {
 		//! Connect to PostgreSQL database
 		dsnMaster := utils.GoDotEnvVariable("DATABASE_URL")
-		dbMaster, errMaster := gorm.Open(postgres.Open(dsnMaster), &gorm.Config{})
+		dbMaster, errMaster := gorm.Open(mysql.Open(dsnMaster), &gorm.Config{})
 		if errMaster != nil {
 			log.Panic(errMaster)
 		}

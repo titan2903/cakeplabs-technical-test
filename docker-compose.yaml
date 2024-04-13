@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  fundhub-svc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fundhub-svc:latest
+    container_name: fundhub-svc
+    restart: on-failure
+    env_file:
+      - .env
+    depends_on:
+      - fundhub-db
+    ports:
+      - "8090:8090"
+
+  fundhub-db:
+    container_name: fundhub-db
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      # Mounting volumes from server to local directory
+      - /home/titan/database-docker/mysql:/var/lib/mysql
