@@ -1,22 +1,22 @@
 version: "3.8"
 
 services:
-  fundhub-svc:
+  golang-svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: fundhub-svc:latest
-    container_name: fundhub-svc
+    image: golang-svc:latest
+    container_name: golang-svc
     restart: on-failure
     env_file:
       - .env
     depends_on:
-      - fundhub-db
+      - golang-db
     ports:
       - "8090:8090"
 
-  fundhub-db:
-    container_name: fundhub-db
+  golang-db:
+    container_name: golang-db
     image: mysql:8.0
     restart: always
     environment:
