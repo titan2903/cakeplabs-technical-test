@@ -1,19 +1,33 @@
 version: "3.8"
 
 services:
-  golang-svc:
+  golang-dev-svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: golang-svc:latest
-    container_name: golang-svc
+    image: golang-dev-svc:latest
+    container_name: golang-dev-svc
     restart: on-failure
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
     depends_on:
       - golang-db
     ports:
       - "8090:8090"
+  
+  golang-prod-svc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: golang-prod-svc:latest
+    container_name: golang-prod-svc
+    restart: on-failure
+    # env_file:
+    #   - .env
+    depends_on:
+      - golang-db
+    ports:
+      - "8091:8090"
 
   golang-db:
     container_name: golang-db
